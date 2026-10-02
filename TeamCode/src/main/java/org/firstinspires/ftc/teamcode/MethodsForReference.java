@@ -16,7 +16,7 @@ public class MethodsForReference extends LinearOpMode{
     static final double COUNTS_PER_INCH =
             (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (WHEEL_DIAMETER_INCHES * 3.1415);
     static final double COUNTS_PER_ROBOT_ROTATION =
-            (ROBOT_CIRCUMCIRCLE*COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (360 * WHEEL_DIAMETER_INCHES * 3.1415);
+            (ROBOT_CIRCUMCIRCLE*COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (360 * (WHEEL_DIAMETER_INCHES * 3.1415));
 
     //full360 rotation in inches 24.4*pi
 
