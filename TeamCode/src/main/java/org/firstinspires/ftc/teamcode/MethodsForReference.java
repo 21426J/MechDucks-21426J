@@ -45,9 +45,9 @@ public class MethodsForReference extends LinearOpMode{
 
         waitForStart();
 
-        encoderDrive(1,12,5);
-        encoderDriveTurn(1, ROBOT_CIRCUMCIRCLE,5, true);
-        encoderRoboRotationTEST(1,360,5,false);
+        encoderDrive(1,12,5);//speed, inches, timeout
+        encoderDriveTurn(1, ROBOT_CIRCUMCIRCLE,5, true);//speed, inches, time, turnright?
+        encoderRoboRotationTEST(1,360,5,false);//speed, degrees, time, turnright?
 
 
     }
