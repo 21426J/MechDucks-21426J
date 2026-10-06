@@ -12,7 +12,9 @@ public class MethodsForReference extends LinearOpMode{
     static final double DRIVE_GEAR_REDUCTION = 1.0;
     static final double WHEEL_DIAMETER_INCHES = 4.0;
 
-    static final double ROBOT_CIRCUMCIRCLE = 24.4;
+    static final double ROBOT_DIAMETER = 21.8;
+
+    static final double ROBOT_CIRCUMCIRCLE = (ROBOT_DIAMETER*3.1415926);
     static final double COUNTS_PER_INCH =
             (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (WHEEL_DIAMETER_INCHES * 3.1415);
     static final double COUNTS_PER_ROBOT_ROTATION =
