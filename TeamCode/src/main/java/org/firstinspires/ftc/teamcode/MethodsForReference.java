@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @Autonomous(name = "TestMethods")
 public class MethodsForReference extends LinearOpMode{
@@ -12,15 +13,14 @@ public class MethodsForReference extends LinearOpMode{
     static final double DRIVE_GEAR_REDUCTION = 1.0;
     static final double WHEEL_DIAMETER_INCHES = 4.0;
 
-    static final double ROBOT_DIAMETER = 21.8;
+    static final double ROBOT_DIAMETER = 24.76;
 
     static final double ROBOT_CIRCUMCIRCLE = (ROBOT_DIAMETER*3.1415926);
     static final double COUNTS_PER_INCH =
-            (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (WHEEL_DIAMETER_INCHES * 3.1415);
+            (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (WHEEL_DIAMETER_INCHES * 3.1415926);
     static final double COUNTS_PER_ROBOT_ROTATION =
-            (ROBOT_CIRCUMCIRCLE*COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (360 * (WHEEL_DIAMETER_INCHES * 3.1415));
+            (ROBOT_CIRCUMCIRCLE*(COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (360 * (WHEEL_DIAMETER_INCHES * 3.1415)));
 
-    //full360 rotation in inches 24.4*pi
 
     public void runOpMode(){
 
@@ -30,10 +30,10 @@ public class MethodsForReference extends LinearOpMode{
         bRight = hardwareMap.get(DcMotor.class, "bRight");
 
 
-        fLeft.setDirection(DcMotor.Direction.FORWARD);
-        bLeft.setDirection(DcMotor.Direction.FORWARD);
-        fRight.setDirection(DcMotor.Direction.REVERSE);
-        bRight.setDirection(DcMotor.Direction.REVERSE);
+        fLeft.setDirection(DcMotor.Direction.REVERSE);
+        bLeft.setDirection(DcMotor.Direction.REVERSE);
+        fRight.setDirection(DcMotor.Direction.FORWARD);
+        bRight.setDirection(DcMotor.Direction.FORWARD);
 
         fLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         fRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -47,9 +47,9 @@ public class MethodsForReference extends LinearOpMode{
 
         waitForStart();
 
-        encoderDrive(1,12,5);//speed, inches, timeout
-        encoderDriveTurn(1, ROBOT_CIRCUMCIRCLE,5, true);//speed, inches, time, turnright?
-        encoderRoboRotationTEST(1,360,5,false);//speed, degrees, time, turnright?
+        //vencoderDrive(1,12,2);//speed, inches, timeout
+        encoderDriveTurn(1, ROBOT_CIRCUMCIRCLE,3, true);//speed, inches, time, turnright?
+        encoderRoboRotationTEST(1,360,3,false);//speed, degrees, time, turnright?
 
 
     }
