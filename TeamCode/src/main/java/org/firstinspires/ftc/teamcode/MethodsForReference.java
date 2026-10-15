@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 public class MethodsForReference extends LinearOpMode{
     private DcMotor fLeft, bLeft, fRight, bRight;
 
-    static final double COUNTS_PER_MOTOR_REV = 537.6;
+    static final double COUNTS_PER_MOTOR_REV = 103.8;
     static final double DRIVE_GEAR_REDUCTION = 1.0;
     static final double WHEEL_DIAMETER_INCHES = 4.0;
 
@@ -19,8 +19,7 @@ public class MethodsForReference extends LinearOpMode{
     static final double COUNTS_PER_INCH =
             (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (WHEEL_DIAMETER_INCHES * 3.1415926);
     static final double COUNTS_PER_ROBOT_ROTATION =
-            (ROBOT_CIRCUMCIRCLE*(COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (360 * (WHEEL_DIAMETER_INCHES * 3.1415)));
-
+            (ROBOT_CIRCUMCIRCLE*COUNTS_PER_INCH)/360;
 //:)
     public void runOpMode(){
 
@@ -57,7 +56,6 @@ public class MethodsForReference extends LinearOpMode{
     public void encoderDrive(double speed, double inches, double timeoutS) {
 
         int moveCounts = (int) (inches * COUNTS_PER_INCH);
-        int sleeptime = (int)(timeoutS*1000);
 
         fLeft.setTargetPosition(fLeft.getCurrentPosition() + moveCounts);
         fRight.setTargetPosition(fRight.getCurrentPosition() + moveCounts);
@@ -83,14 +81,12 @@ public class MethodsForReference extends LinearOpMode{
 
         stopMotors();
         resetEncoders();
-        sleep(sleeptime);
 
     }
 
     public void encoderRoboRotationTEST(double speed, double degrees, double timeoutS, boolean right) {
 
         int moveCounts = (int) (degrees * COUNTS_PER_ROBOT_ROTATION);
-        int sleeptime = (int)(timeoutS*1000);
 
 
         if (right) {
@@ -125,13 +121,11 @@ public class MethodsForReference extends LinearOpMode{
         stopMotors();
         resetEncoders();
 
-        sleep(sleeptime);
     }
 
     public void encoderDriveTurn(double speed, double inches, double timeoutS, boolean right) {
 
         int moveCounts = (int) (inches * COUNTS_PER_INCH);
-        int sleeptime = (int)(timeoutS*1000);
 
 
         if (right) {
@@ -165,7 +159,6 @@ public class MethodsForReference extends LinearOpMode{
 
         stopMotors();
         resetEncoders();
-        sleep(sleeptime);
 
     }
 
