@@ -46,7 +46,7 @@ public class MethodsForReference extends LinearOpMode{
 
         waitForStart();
 
-        //vencoderDrive(1,12,2);//speed, inches, timeout
+        //encoderDrive(1,12,2);//speed, inches, timeout
         encoderDriveTurn(1, ROBOT_CIRCUMCIRCLE,3, true);//speed, inches, time, turnright?
         encoderRoboRotationTEST(1,360,3,false);//speed, degrees, time, turnright?
 
