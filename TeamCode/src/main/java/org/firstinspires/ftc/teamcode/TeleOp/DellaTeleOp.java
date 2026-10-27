@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 
 
-@TeleOp (name = "DellaTeleOp")
+@TeleOp (name = "DellaTeleOp(Backup)")
 public class DellaTeleOp extends LinearOpMode {
     private DcMotorEx Shooter;
 
