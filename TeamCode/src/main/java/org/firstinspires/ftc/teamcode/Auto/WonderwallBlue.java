@@ -3,10 +3,11 @@ package org.firstinspires.ftc.teamcode.Auto;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 
-@Autonomous (name = "WonderwallBlue")
+@Autonomous (name = "Wonderwall")
 public class WonderwallBlue extends LinearOpMode{
 
     private DcMotorEx shooter;
@@ -28,26 +29,27 @@ public class WonderwallBlue extends LinearOpMode{
     @Override
     public void runOpMode(){
 
-        fLeft  = hardwareMap.get(DcMotor.class, "fLeft");
-        bLeft  = hardwareMap.get(DcMotor.class, "bLeft");
-        fRight = hardwareMap.get(DcMotor.class, "fRight");
-        bRight = hardwareMap.get(DcMotor.class, "bRight");
-
-        shooter = hardwareMap.get(DcMotorEx.class, "shooter");
         intake = hardwareMap.get(DcMotor.class, "intake");
+
+        intake.setDirection(DcMotor.Direction.REVERSE);
+
         Funnel1 = hardwareMap.get(DcMotor.class, "funnel1");
         Funnel2 = hardwareMap.get(DcMotor.class, "funnel2");
+        Funnel2.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        //Lever = hardwareMap.get(Servo.class, "Lever"); *Was on Dennis, modifying code for Della
+        shooter = hardwareMap.get(DcMotorEx.class, "shooter");
+        shooter.setZeroPowerBehavior(DcMotorEx.ZeroPowerBehavior.BRAKE);
+        shooter.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
 
-        Funnel2.setDirection(DcMotor.Direction.REVERSE);
+        fRight= hardwareMap.get(DcMotor.class,"fRight");
+        fLeft= hardwareMap.get(DcMotor.class,"fLeft");
+        bRight= hardwareMap.get(DcMotor.class,"bRight");
+        bLeft= hardwareMap.get(DcMotor.class,"bLeft");
 
-        //Lever.setDirection(Servo.Direction.REVERSE);
-
-        fLeft.setDirection(DcMotor.Direction.FORWARD);
-        bLeft.setDirection(DcMotor.Direction.FORWARD);
         fRight.setDirection(DcMotor.Direction.REVERSE);
+        fLeft.setDirection(DcMotor.Direction.FORWARD);
         bRight.setDirection(DcMotor.Direction.REVERSE);
+        bLeft.setDirection(DcMotor.Direction.FORWARD);
 
         fLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         fRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -58,10 +60,6 @@ public class WonderwallBlue extends LinearOpMode{
         fRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         bLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         bRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-
-        shooter.setDirection(DcMotorEx.Direction.REVERSE);
-        shooter.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
-        shooter.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         waitForStart();
 

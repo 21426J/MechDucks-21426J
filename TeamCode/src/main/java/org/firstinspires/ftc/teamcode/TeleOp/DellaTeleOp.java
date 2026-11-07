@@ -32,6 +32,8 @@ public class DellaTeleOp extends LinearOpMode {
 
         Intake = hardwareMap.get(DcMotor.class, "intake");
 
+        Intake.setDirection(DcMotor.Direction.REVERSE);
+
         Funnel1 = hardwareMap.get(DcMotor.class, "funnel1");
         Funnel2 = hardwareMap.get(DcMotor.class, "funnel2");
         Funnel2.setDirection(DcMotorSimple.Direction.REVERSE);
