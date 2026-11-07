@@ -55,9 +55,11 @@ public class DellaTeleOp extends LinearOpMode {
 //----------------INTAKE--------------------
             if (gamepad2.left_bumper) {
                 Intake.setPower(1);
+                Funnel1.setPower(1);
             }
             else{
                 Intake.setPower(0);
+                Funnel1.setPower(0);
             }
 //----------------SHOOTER---------------------
             if (gamepad2.dpad_up && !wasUpPressed) {

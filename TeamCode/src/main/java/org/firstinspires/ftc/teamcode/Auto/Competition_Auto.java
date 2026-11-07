@@ -60,7 +60,6 @@ public class Competition_Auto extends LinearOpMode {
         bLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         bRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
-        shooter.setDirection(DcMotorEx.Direction.REVERSE);
         shooter.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
         shooter.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
