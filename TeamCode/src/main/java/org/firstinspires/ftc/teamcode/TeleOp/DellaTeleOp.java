@@ -26,7 +26,7 @@ public class DellaTeleOp extends LinearOpMode {
 
     //private boolean aWasPressed = false;
 
-    private int power = 1150;
+    private int power = 1250;
 
     public void runOpMode(){
 
