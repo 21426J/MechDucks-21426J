@@ -67,7 +67,7 @@ public class Shooting_auto extends LinearOpMode {
         // P2-
         waitForStart();
 
-        //Lever.setPosition(0)
+        //Lever.setPosition(0)n
         intake.setPower(1);
         encoderDrive(1, 50, 40); // Forward for 57 inches(in front of hive)
         encoderDriveTurn(1, -26, 40, false); // Turns 90 degrees(toward hive)
