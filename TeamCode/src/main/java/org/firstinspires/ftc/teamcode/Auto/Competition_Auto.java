@@ -73,10 +73,10 @@ public class Competition_Auto extends LinearOpMode {
         intake.setPower(1);
         Funnel1.setPower(1); //gives the shooter the Balls
         encoderDrive(1, 40, 40); // Forward for 57 inches(in front of hive)
-        encoderDriveTurn(1, 10, 40, false); // Turns 90 degrees(toward hive)
+        encoderDriveTurn(1, 12, 40, false); // Turns 90 degrees(toward hive)
         sleep(3000);
         Funnel1.setPower(0);
-        shooter.setVelocity(1250); // starts shooter
+        shooter.setVelocity(1240); // starts shooter
         sleep(7000);
         Funnel1.setPower(1);
         Funnel2.setPower(1);
@@ -85,9 +85,9 @@ public class Competition_Auto extends LinearOpMode {
         intake.setPower(0); //stops everything else
         Funnel1.setPower(0);
         Funnel2.setPower(0);
-        encoderDriveTurn(1,10,40, false); // turns 90 degrees away
+        encoderDriveTurn(1,12,40, false); // turns 90 degrees away
         encoderDrive(1,30,40); // Forward 42 inches
-        encoderDriveTurn(1,10,40,true); // Turns 90 degrees(other side of the field)
+        encoderDriveTurn(1,12,40,true); // Turns 90 degrees(other side of the field)
         encoderDrive(1,93,40); // Moves to other side of field(parks)
     }
 
