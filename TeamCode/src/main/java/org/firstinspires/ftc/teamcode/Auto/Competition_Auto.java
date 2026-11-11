@@ -76,7 +76,7 @@ public class Competition_Auto extends LinearOpMode {
         encoderDriveTurn(1, 15, 40, false); // Turns 90 degrees(toward hive)
         sleep(3000);
         Funnel1.setPower(0);
-        shooter.setVelocity(1180); // starts shooter
+        shooter.setVelocity(900); // starts shooter
         sleep(7000);
         Funnel1.setPower(1);
         Funnel2.setPower(1);
