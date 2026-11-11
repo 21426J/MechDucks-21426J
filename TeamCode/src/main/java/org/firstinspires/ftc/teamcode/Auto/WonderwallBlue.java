@@ -64,7 +64,10 @@ public class WonderwallBlue extends LinearOpMode{
         waitForStart();
 
         encoderDrive(1, 12, 2);
-        encoderDrive(1, -6, 2);
+        encoderDriveTurn(1, 15, 2, false);
+        encoderDrive(1, 6, 2);
+        encoderDriveTurn(1, 15, 2, false);
+        encoderDrive(1, 8, 2);
 
     }
     public void encoderDrive(double speed, double inches, double timeoutS) {

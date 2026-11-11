@@ -88,9 +88,9 @@ public class DellaTeleOp extends LinearOpMode {
             double drive;
             double strafe;
             double rotation;
-            drive = gamepad1.right_stick_y;
-            strafe = gamepad1.right_stick_x;
-            rotation = gamepad1.left_stick_x;
+            drive = gamepad1.left_stick_y;
+            strafe = gamepad1.left_stick_x;
+            rotation = gamepad1.right_stick_x;
 
             fRight.setPower(drive+rotation+strafe);
             fLeft.setPower(drive-rotation-strafe);
