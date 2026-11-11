@@ -55,14 +55,9 @@ public class DellaTeleOp extends LinearOpMode {
         waitForStart();
         while (opModeIsActive()){
 //----------------INTAKE--------------------
-            if (gamepad2.left_bumper) {
-                Intake.setPower(1);
-                Funnel1.setPower(1);
-            }
-            else{
-                Intake.setPower(0);
-                Funnel1.setPower(0);
-            }
+
+            Intake.setPower(gamepad2.left_stick_y);
+            Funnel1.setPower(gamepad2.left_stick_y);
 //----------------SHOOTER---------------------
             if (gamepad2.dpad_up && !wasUpPressed) {
                 power += 100; // Increase power by 100
@@ -76,18 +71,14 @@ public class DellaTeleOp extends LinearOpMode {
             }
             wasDownPressed = gamepad2.dpad_down;
 
-            if (gamepad2.right_bumper) {
-                Shooter.setVelocity(power);
-            } else {
-                Shooter.setVelocity(0);
-            }
+            Shooter.setVelocity(power*gamepad2.right_stick_y);
+
 //----------------FUNNEL WHEELS-------------------
             if (gamepad2.a) {
                 Funnel1.setPower(1);
                 Funnel2.setPower(1);
 
-            }
-            else{
+            } else{
                 Funnel1.setPower(0);
                 Funnel2.setPower(0);
 
