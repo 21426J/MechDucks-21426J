@@ -26,7 +26,7 @@ public class DellaTeleOp extends LinearOpMode {
 
     //private boolean aWasPressed = false;
 
-    private int power = 1250;
+    private int power = 1240;
 
     public void runOpMode(){
 
@@ -71,7 +71,7 @@ public class DellaTeleOp extends LinearOpMode {
             wasUpPressed = gamepad2.dpad_up;
 
             // --- DPAD DOWN LOGIC ---
-            if (gamepad2.dpad_down && !wasDownPressed) {
+            if (gamepad2.dpad_down && !wasDownPressed && (power-100 != 0)) {
                 power -= 100; // Decrease power by 100
             }
             wasDownPressed = gamepad2.dpad_down;
@@ -108,7 +108,6 @@ public class DellaTeleOp extends LinearOpMode {
 
             telemetry.addData("Shooter Power: ", power);
             telemetry.update();
-
         }
     }
 }
