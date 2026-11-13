@@ -60,14 +60,14 @@ public class DellaTeleOp extends LinearOpMode {
             Funnel1.setPower(gamepad2.left_stick_y);
 //----------------SHOOTER---------------------
             if (gamepad2.dpad_up && !wasUpPressed) {
-                power += 100; // Increase power by 100
+                power += 50; // Increase power by 100
             }
             // Update the tracking variable to remember this frame's state
             wasUpPressed = gamepad2.dpad_up;
 
             // --- DPAD DOWN LOGIC ---
             if (gamepad2.dpad_down && !wasDownPressed && (power-100 != 0)) {
-                power -= 100; // Decrease power by 100
+                power -= 50; // Decrease power by 100
             }
             wasDownPressed = gamepad2.dpad_down;
 
